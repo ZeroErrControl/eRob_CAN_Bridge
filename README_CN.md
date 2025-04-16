@@ -15,7 +15,7 @@ EROB CAN Bridge 提供了 ROS 2 与 CAN 总线电机控制器之间的桥接功�
 - ROS 2 (已在 Humble 上测试)
 - Python 3.8+
 - CAN 接口硬件
-- `can-utils` 包用于 SocketCAN
+- `can-utils` 用于 SocketCAN
 
 ## 安装
 
@@ -34,7 +34,7 @@ pip install python-can
 ```bash
 mkdir -p ~/erob_ws/src
 cd ~/erob_ws/src
-git clone https://github.com/your-org/erob_can_bridge.git
+git clone git@github.com:ZeroErrControl/eRob_CAN_Bridge.git
 ```
 
 ### 3. 构建包
@@ -90,6 +90,9 @@ ros2 launch erob_can_bridge can_bridge.launch.py can_channel:=can0 scan_motors_o
 
 ##### 使用广播位置命令
 
+注意：在使用广播位置命令之前，请确保所有电机都已初始化为位置控制模式，使用命令 
+`ros2 service call /init_position_mode std_srvs/srv/Trigger "{}"`。
+
 可以通过广播命令控制所有电机的位置：
 
 ```bash
@@ -103,7 +106,7 @@ ros2 topic pub --once /broadcast_position_cmd std_msgs/msg/Int32 "data: -5000"
 ros2 topic pub --once /broadcast_position_cmd std_msgs/msg/Int32 "data: 0"
 ```
 
-注意：在使用广播位置命令之前，请确保所有电机都已初始化为位置控制模式，使用命令 `ros2 service call /init_position_mode std_srvs/srv/Trigger "{}"`。
+
 
 ##### 手动执行位置控制命令序列
 

@@ -34,7 +34,7 @@ pip install python-can
 ```bash
 mkdir -p ~/erob_ws/src
 cd ~/erob_ws/src
-git clone https://github.com/your-org/erob_can_bridge.git
+git clone git@github.com:ZeroErrControl/eRob_CAN_Bridge.git
 ```
 
 ### 3. Build Package
