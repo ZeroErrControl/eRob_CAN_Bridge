@@ -1,6 +1,11 @@
 # EROB CAN Bridge
 
+**Version:** 1.0.0  
+**Release Date:** 2025-04-16
+
 A ROS 2 package for controlling motors via CAN bus.
+
+This package can be used for upper-level development on Linux systems or for rapid demo development through ROS 2. We will add torque mode functionality and improve motor status diagnostics in future updates. Currently, only position and velocity modes have been tested, which can be used to quickly drive single or multiple eRob devices via CAN.
 
 ## Overview
 
